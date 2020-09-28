@@ -1,0 +1,84 @@
+{
+  "name": "@letstimeit/mdt-compression",
+  "version": "0.0.0-development",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/**/*.{js,ts} --fix",
+    "test": "cross-env jest",
+    "build": "tsc",
+    "ci-cover": "cross-env jest --coverage && cat ./cov/lcov.info | coveralls"
+  },
+  "dependencies": {
+    "deflate-js": "^0.2.3",
+    "pako": "^1.0.11",
+    "tsc": "^1.20150623.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-transform-destructuring": "^7.6.0",
+    "@babel/plugin-transform-function-name": "^7.4.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@babel/plugin-transform-object-super": "^7.5.5",
+    "@babel/plugin-transform-parameters": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-stage-1": "^7.0.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@babel/runtime": "^7.5.5",
+    "@types/chai": "^4.2.12",
+    "@types/jest": "^25.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
+    "cross-env": "^6.0.3",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^24.9.0",
+    "nyc": "^14.1.1",
+    "rollup": "^1.27.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "semantic-release": "^17.1.2",
+    "semantic-release-cli": "^5.4.0",
+    "sinon": "^7.4.1",
+    "typescript": "^4.0.3",
+    "winston": "^3.2.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}"
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov",
+      "text-summary"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "coverageDirectory": "cov",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@babel/runtime-corejs2).+\\.js$"
+    ],
+    "transform": {
+      ".*\\.(js|ts)$": "babel-jest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LetsTimeIt/mdt-compression.git"
+  }
+}

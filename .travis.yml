@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - stable
+  - lts/*
+
+install:
+  - npm ci
+
+cache:
+  directories:
+    - node_modules
+
+git:
+  depth: 1
+
+script:
+  - npm run test
+
+after_script:
+  - npm run ci-cover
+
+before_deploy:
+  - npm build
+
+deploy:
+  provider: npm
+  email: $NPM_PUBLIC_EMAIL
+  api_key: $NPM_API_KEY
+  skip_cleanup: true
+  on:
+    tags: true
