@@ -20,7 +20,7 @@ after_script:
   - npm run ci-cover
 
 before_deploy:
-  - npm build
+  - npm run build
 
 deploy:
   provider: npm
