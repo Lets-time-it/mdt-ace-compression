@@ -4,10 +4,10 @@ node_js:
   - lts/*
 
 install:
+  - npm remove npm
   - npm ci
 
 cache:
-  npm: false
   directories:
     - node_modules
 
