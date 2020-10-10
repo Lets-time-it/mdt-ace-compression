@@ -16,4 +16,6 @@ const Deserialize = (content:string):LuaTypes => {
   }
 };
 const Serialize = (data:Record<string, unknown>):string => V1Serialize(data, false);
-export { Serialize, Deserialize };
+const exporting = { Serialize, Deserialize };
+
+export default exporting;

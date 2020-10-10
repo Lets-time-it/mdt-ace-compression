@@ -1,7 +1,7 @@
-import * as Deflate from './deflate';
-import * as Ace from './ace';
+import Deflate from './deflate';
+import Ace from './ace';
 
 export default {
   Deflate,
-  Ace
+  Ace,
 };

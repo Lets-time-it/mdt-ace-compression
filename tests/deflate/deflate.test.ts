@@ -1,11 +1,11 @@
 import assert from 'assert';
-import { DecodeForPrint, EncodeForPrint } from '../../src/deflate/index';
+import Deflate from '../../src/deflate/index';
 
 describe('DecodeForPrint', () => {
   it('Properly encodes', () => {
     const input = Array.from({ length: 255 }, (_, i) => i);
-    const encoded = EncodeForPrint(input);
-    const decoded = DecodeForPrint(encoded);
+    const encoded = Deflate.EncodeForPrint(input);
+    const decoded = Deflate.DecodeForPrint(encoded);
     assert.deepEqual(input, decoded);
   });
   it('Matches a pre-existing encoded string', () => {
@@ -56,7 +56,7 @@ describe('DecodeForPrint', () => {
       80, 55, 225, 105, 238, 7, 250, 115, 49, 178, 238, 14, 33, 252, 156,
       134, 182, 80, 238, 167, 126, 76, 23, 56, 129, 248, 127,
     ];
-    const actuallyDecoded = DecodeForPrint(encoded);
+    const actuallyDecoded = Deflate.DecodeForPrint(encoded);
     assert.deepEqual(actuallyDecoded, decoded);
   });
 });

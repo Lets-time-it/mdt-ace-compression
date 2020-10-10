@@ -1,6 +1,6 @@
 import chai, { expect } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
-import * as Ace from '../../src/ace';
+import Ace from '../../src/ace';
 
 chai.use(ChaiAsPromised);
 

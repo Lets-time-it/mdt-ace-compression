@@ -96,6 +96,7 @@ const EncodeForPrint = (input:Array<number>):string => {
   }
   return buffer.map((e) => String.fromCharCode(e)).join('');
 };
-export {
+const output = {
   Deflate, Inflate, DecodeForPrint, EncodeForPrint,
 };
+export default output;
