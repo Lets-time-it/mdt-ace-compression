@@ -1,7 +1,7 @@
 import DeflateJS from 'deflate-js';
 
-const Deflate = (data:Array<number>):Array<number> => DeflateJS.deflate(data);
-const Inflate = (data:Array<number>):Array<number> => DeflateJS.inflate(data);
+const Deflate = (data:Array<number>):Uint8Array => DeflateJS.deflate(new Uint8Array(data));
+const Inflate = (data:Array<number>):Uint8Array => DeflateJS.inflate(new Uint8Array(data));
 
 const mappingTable = [
   'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
